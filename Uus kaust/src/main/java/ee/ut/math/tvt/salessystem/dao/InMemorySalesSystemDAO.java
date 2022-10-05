@@ -16,7 +16,7 @@ public class InMemorySalesSystemDAO implements SalesSystemDAO {
         items.add(new StockItem(1L, "Lays chips", "Potato chips", 11.0, 5));
         items.add(new StockItem(2L, "Chupa-chups", "Sweets", 8.0, 8));
         items.add(new StockItem(3L, "Frankfurters", "Beer sauseges", 15.0, 12));
-        items.add(new StockItem(4L, "Free Beer", "Student's delight", 0.0, 100));
+        items.add(new StockItem(4L, "Not Free Beer", "Student's delight", 3.0, 100));
         this.stockItemList = items;
         this.soldItemList = new ArrayList<>();
     }
