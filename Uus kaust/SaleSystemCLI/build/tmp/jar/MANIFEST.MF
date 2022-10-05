@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Implementation-Title: Gradle Quickstart
+Implementation-Version: 1.0
+Main-Class: ee.ut.math.tvt.salessystem.ui.ConsoleUI
+Class-Path: file:/C:/Users/urmitari/Downloads/MTAT-03-094-pos2022-a434f5
+ 8ee991%20(1)/MTAT-03-094-pos2022-a434f58ee991/build/libs/MTAT-03-094-po
+ s2022-a434f58ee991-1.0.jar file:/C:/Users/urmitari/.gradle/caches/modul
+ es-2/files-2.1/org.apache.logging.log4j/log4j-core/2.6.2/a91369f655eb16
+ 39c6aece5c5eb5108db18306/log4j-core-2.6.2.jar file:/C:/Users/urmitari/.
+ gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-api/2.
+ 6.2/bd1b74a5d170686362091c7cf596bbc3adf5c09b/log4j-api-2.6.2.jar
+
