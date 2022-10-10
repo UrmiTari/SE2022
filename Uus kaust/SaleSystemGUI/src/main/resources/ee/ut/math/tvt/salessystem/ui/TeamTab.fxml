@@ -5,8 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<GridPane fx:controller="ee.ut.math.tvt.salessystem.ui.controllers.TeamController"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+<GridPane>
     <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
 
 
