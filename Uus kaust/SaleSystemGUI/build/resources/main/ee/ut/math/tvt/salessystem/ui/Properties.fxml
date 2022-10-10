@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.text.Text?>
+<TitledPane alignment="CENTER" animated="false" collapsible="false" text="Team info" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane>
+        <center>
+            <Text>
+               Team name: Lab1-team1-awesometeam
+            </Text>
+        </center>
+        <top>
+
+        </top>
+    </BorderPane>
+</TitledPane>
