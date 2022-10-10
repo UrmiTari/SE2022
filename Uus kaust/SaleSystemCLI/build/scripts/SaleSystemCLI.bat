@@ -67,7 +67,7 @@ goto fail
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\SaleSystemCLI-1.0.jar;%APP_HOME%\lib\MTAT-03-094-pos2022-a434f58ee991-1.0.jar;%APP_HOME%\lib\log4j-core-2.6.2.jar;%APP_HOME%\lib\log4j-api-2.6.2.jar
+set CLASSPATH=%APP_HOME%\lib\SaleSystemCLI-1.0.jar;%APP_HOME%\lib\Uus kaust-1.0.jar;%APP_HOME%\lib\log4j-core-2.6.2.jar;%APP_HOME%\lib\log4j-api-2.6.2.jar
 
 
 @rem Execute SaleSystemCLI

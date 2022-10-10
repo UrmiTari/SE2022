@@ -1,5 +1,7 @@
 org/example/Cashier.java
  org.example.Cashier
+org/example/logIn.java
+ org.example.logIn
 org/example/WarehouseManager.java
  org.example.WarehouseManager
 org/example/Accountant.java
