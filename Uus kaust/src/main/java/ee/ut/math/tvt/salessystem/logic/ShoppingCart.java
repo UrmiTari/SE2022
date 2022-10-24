@@ -25,7 +25,7 @@ public class ShoppingCart {
         // TODO verify that warehouse items' quantity remains at least zero or throw an exception
 
         items.add(item);
-        log.debug("Added " + item.getName() + " quantity of " + item.getQuantity());
+        //log.debug("Added " + item.getName() + " quantity of " + item.getQuantity());
     }
 
     public List<SoldItem> getAll() {
