@@ -2,11 +2,11 @@ Manifest-Version: 1.0
 Implementation-Title: Gradle Quickstart
 Implementation-Version: 1.0
 Main-Class: ee.ut.math.tvt.salessystem.ui.SalesSystemUI
-Class-Path: file:/C:/Users/urmitari/Desktop/proge%202022/SE2022/Uus%20ka
- ust/build/libs/Uus%20kaust-1.0.jar file:/C:/Users/urmitari/.gradle/cach
- es/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.17.1/779f6
- 0f3844dadc3ef597976fcb1e5127b1f343d/log4j-core-2.17.1.jar file:/C:/User
- s/urmitari/.gradle/caches/modules-2/files-2.1/org.apache.logging.log4j/
- log4j-api/2.17.1/d771af8e336e372fb5399c99edabe0919aeaf5b2/log4j-api-2.1
- 7.1.jar
+Class-Path: file:/C:/Users/Pirjo%20Jõelo/Documents/GitHub/SE2022/Uus%20
+ kaust/build/libs/Uus%20kaust-1.0.jar file:/C:/Users/Pirjo%20Jõelo/.gra
+ dle/caches/modules-2/files-2.1/org.apache.logging.log4j/log4j-core/2.17
+ .1/779f60f3844dadc3ef597976fcb1e5127b1f343d/log4j-core-2.17.1.jar file:
+ /C:/Users/Pirjo%20Jõelo/.gradle/caches/modules-2/files-2.1/org.apache.
+ logging.log4j/log4j-api/2.17.1/d771af8e336e372fb5399c99edabe0919aeaf5b2
+ /log4j-api-2.17.1.jar
 
