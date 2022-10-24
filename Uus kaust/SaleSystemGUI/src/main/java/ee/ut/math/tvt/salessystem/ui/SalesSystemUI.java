@@ -44,6 +44,7 @@ public class SalesSystemUI extends Application {
         log.info("javafx version: " + System.getProperty("javafx.runtime.version"));
         log.debug("Hello this is a debug message");
         log.info("Hello this is an info message");
+        log.error("ping bong error");
 
         Tab purchaseTab = new Tab();
         purchaseTab.setText("Point-of-sale");
