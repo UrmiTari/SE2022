@@ -5,9 +5,11 @@ import ee.ut.math.tvt.salessystem.dataobjects.SoldItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 public class ShoppingCart {
-
+    private static final Logger log = LogManager.getLogger(ShoppingCart.class);
     private final SalesSystemDAO dao;
     private final List<SoldItem> items = new ArrayList<>();
 
@@ -23,7 +25,7 @@ public class ShoppingCart {
         // TODO verify that warehouse items' quantity remains at least zero or throw an exception
 
         items.add(item);
-        //log.debug("Added " + item.getName() + " quantity of " + item.getQuantity());
+        log.debug("Added " + item.getName() + " quantity of " + item.getQuantity());
     }
 
     public List<SoldItem> getAll() {
@@ -40,6 +42,7 @@ public class ShoppingCart {
         // note the use of transactions. InMemorySalesSystemDAO ignores transactions
         // but when you start using hibernate in lab5, then it will become relevant.
         // what is a transaction? https://stackoverflow.com/q/974596
+        log.info("Begin transaction");
         dao.beginTransaction();
         try {
             for (SoldItem item : items) {
