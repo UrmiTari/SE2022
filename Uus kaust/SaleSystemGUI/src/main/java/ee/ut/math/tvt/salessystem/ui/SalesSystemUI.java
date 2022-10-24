@@ -42,6 +42,8 @@ public class SalesSystemUI extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         log.info("javafx version: " + System.getProperty("javafx.runtime.version"));
+        log.debug("Hello this is a debug message");
+        log.info("Hello this is an info message");
 
         Tab purchaseTab = new Tab();
         purchaseTab.setText("Point-of-sale");
