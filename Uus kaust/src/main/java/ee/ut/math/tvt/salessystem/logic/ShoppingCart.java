@@ -9,7 +9,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class ShoppingCart {
-    private static final Logger log = LogManager.getLogger(ShoppingCart.class);
+    //private static final Logger log = LogManager.getLogger(ShoppingCart.class); //does not work :(
     private final SalesSystemDAO dao;
     private final List<SoldItem> items = new ArrayList<>();
 
