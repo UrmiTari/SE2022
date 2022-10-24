@@ -4,16 +4,16 @@
 3. Diana Prigoževa
 
 ## Homework 1:
-<When you finish your homework, add a link pointing to the solution here (for example, a link to a page on the wiki)> 
+<https://bitbucket.org/pirjo2/lg4-3tilli/wiki/Homework%201?fbclid=IwAR1lzyN0BTu54_YDPj7_YTaAaXse9kqKxohtSAhKYPl_4q31fWBPJv1Zsas> 
 
 ## Homework 2:
-<Links to the solution>
+<https://bitbucket.org/pirjo2/lg4-3tilli/wiki/Homework%202>
 
 ## Homework 3:
-<Links to the solution>
+<https://github.com/UrmiTari/SE2022/>
 
 ## Homework 4:
-<Links to the solution>
+<https://bitbucket.org/pirjo2/lg4-3tilli/wiki/Homework%204>
 
 ## Homework 5:
 <Links to the solution>
