@@ -23,7 +23,7 @@ public class ShoppingCart {
         // TODO In case such stockItem already exists increase the quantity of the existing stock
         // TODO verify that warehouse items' quantity remains at least zero or throw an exception
         if (getAll().size() == 0){
-            if (item.getStockItem().getQuantity() - item.getQuantity() >= 0){
+            if (item.getQuantity() <= item.getStockItem().getQuantity()){
                 items.add(item);
             }
             else {
@@ -33,13 +33,19 @@ public class ShoppingCart {
         else {
             for (SoldItem soldItem : items){
                 long i = soldItem.getStockItem().getId();
-                System.out.println(i);
+                //System.out.println(i);
                 long ii = item.getStockItem().getId();
-                System.out.println(ii);
+                //System.out.println(ii);
                 //soldItem.getId();
+                //int a = soldItem.getQuantity();
+                //int aa = soldItem.getStockItem().getQuantity();
+                //System.out.println(a);
+                //System.out.println(aa);
+                int c = soldItem.getQuantity() + item.getQuantity();
+                //System.out.println(c);
                 if (i == ii){
-                    if (soldItem.getStockItem().getQuantity() - item.getQuantity() >= 0){
-                        //System.out.println("yay");
+                    if (c <= soldItem.getStockItem().getQuantity()){
+                        System.out.println("yay");
                         soldItem.setQuantity(soldItem.getQuantity() + item.getQuantity());
                         //soldItem.getStockItem().setQuantity(soldItem.getQuantity() + item.getQuantity());
                         break;
@@ -50,7 +56,7 @@ public class ShoppingCart {
                         //soldItem.setQuantity(soldItem.getQuantity()+item.getQuantity());
                 }
                 else{
-                    if (soldItem.getStockItem().getQuantity() - item.getQuantity() >= 0){
+                    if (soldItem.getQuantity() + item.getQuantity() <= soldItem.getStockItem().getQuantity()){
                         items.add(item);
                         break;
                     }
