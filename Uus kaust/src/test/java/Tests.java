@@ -1,10 +1,11 @@
 //import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
 import org.junit.Test;
 
 import java.util.List;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 //import static org.mockito.Mockito.*;
 
 public class Tests {
@@ -17,9 +18,10 @@ public class Tests {
         //verify(, calls(1)).beginTransaction();   //find in shoppingcart.java
         //verify(, times(1)).commitTransaction();
     }
-    @Test
+    @After
     public void testAddingNewItem () {
         //check that a new item is saved through the DAO
+
     }
     @Test
     public void testAddingExistingItem () {
