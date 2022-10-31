@@ -46,6 +46,11 @@ public class Tests {
         //and the saveStockItem method of the DAO is not called
 
         //verify(, calls(0)).saveStockItem();
+        bread = new StockItem(5L,"Bread","Fresh and fluffy", 0.59,10);
+        //dao = new InMemorySalesSystemDAO();
+        //shoppingCart = new ShoppingCart(dao);
+        dao = Mockito.mock(InMemorySalesSystemDAO.class);
+
     }
     @Test
     public void testAddingItemWithNegativeQuantity () {
