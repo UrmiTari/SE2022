@@ -2,15 +2,19 @@
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.mockito.Mockito.*;
+//import static org.mockito.Mockito.*;
 
 public class Tests {
+    List mockedList = mock(List.class);
     @Test
     public void testAddingItemBeginsAndCommitsTransaction () {
         //check that methods
         //beginTransaction and commitTransaction are both called exactly once and
         //that order
-        verify(dao, times(1)).beginTransaction();
+        //verify(, calls(1)).beginTransaction();   //find in shoppingcart.java
         //verify(, times(1)).commitTransaction();
     }
     @Test
@@ -21,6 +25,8 @@ public class Tests {
     public void testAddingExistingItem () {
         //check that adding a new item increases the quantity
         //and the saveStockItem method of the DAO is not called
+
+        //verify(, calls(0)).saveStockItem();
     }
     @Test
     public void testAddingItemWithNegativeQuantity () {
