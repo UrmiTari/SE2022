@@ -1,6 +1,7 @@
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
 public class Tests {
     @Test
     public void testAddingItemBeginsAndCommitsTransaction () {
@@ -20,4 +21,5 @@ public class Tests {
         //check that adding an item with
         //negative quantity results in an exception
     }
+
 }
