@@ -1,5 +1,7 @@
 ee/ut/math/tvt/salessystem/dao/InMemorySalesSystemDAO.java
  ee.ut.math.tvt.salessystem.dao.InMemorySalesSystemDAO
+ee/ut/math/tvt/salessystem/dao/HibernateSalesSystemDAO.java
+ ee.ut.math.tvt.salessystem.dao.HibernateSalesSystemDAO
 ee/ut/math/tvt/salessystem/SalesSystemException.java
  ee.ut.math.tvt.salessystem.SalesSystemException
 ee/ut/math/tvt/salessystem/dao/SalesSystemDAO.java
