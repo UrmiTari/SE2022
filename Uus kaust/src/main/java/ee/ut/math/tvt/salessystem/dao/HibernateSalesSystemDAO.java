@@ -16,19 +16,9 @@ public class HibernateSalesSystemDAO implements SalesSystemDAO {
     private final EntityManagerFactory emf;
     private final EntityManager em;
 
-    /**public HibernateSalesSystemDAO() {
-        List<StockItem> items = new ArrayList<StockItem>();
-        items.add(new StockItem(1L, "Lays chips", "Potato chips", 11.0, 5));
-        items.add(new StockItem(2L, "Chupa-chups", "Sweets", 8.0, 8));
-        items.add(new StockItem(3L, "Frankfurters", "Beer sauseges", 15.0, 12));
-        items.add(new StockItem(4L, "Expensive Beer", "Student's dream", 10.0, 100));
-        items.add(new StockItem(4L, "Not Free Beer", "Student's delight", 3.0, 100));
-        this.stockItemList = items;
-        this.soldItemList = new ArrayList<>();
-    }**/
     public HibernateSalesSystemDAO() {
-// if you get ConnectException / JDBCConnectionException then you
-// probably forgot to start the database before starting the application
+        // if you get ConnectException / JDBCConnectionException then you
+        // probably forgot to start the database before starting the application
         emf = Persistence.createEntityManagerFactory ("pos");
         em = emf.createEntityManager ();
     }
@@ -42,22 +32,24 @@ public class HibernateSalesSystemDAO implements SalesSystemDAO {
 
     @Override
     public List<StockItem> findStockItems() {
-        return null;
+        //return em.createQuery("from Student", Student.class).getResultList();
+        return em.createQuery("", StockItem.class).getResultList();
+        //return null;
     }
 
     @Override
     public StockItem findStockItem(long id) {
-        return null;
+        return em.createQuery("",StockItem.class).getSingleResult();
     }
 
     @Override
     public void saveStockItem(StockItem stockItem) {
-
+        em.setProperty(String.valueOf(stockItem), findStockItem(stockItem.getId()));
     }
 
     @Override
     public void saveSoldItem(SoldItem item) {
-
+        em.setProperty(String.valueOf(item), findStockItem(item.getId()));
     }
 
     @Override
@@ -73,47 +65,4 @@ public class HibernateSalesSystemDAO implements SalesSystemDAO {
         em.getTransaction (). commit ();
     }
 
-
-    /**@Override
-    public List<StockItem> findStockItems() {
-        return stockItemList;
-    }
-
-    @Override
-    public StockItem findStockItem(long id) {
-        for (StockItem item : stockItemList) {
-            if (item.getId() == id)
-                return item;
-        }
-        return null;
-    }
-
-    @Override
-    public void saveSoldItem(SoldItem item) {
-        /**if (findStockItem(item.getId()).getQuantity() - item.getQuantity() >= 0){
-         soldItemList.add(item);
-         //item.setQuantity(findStockItem(item.getId()).getQuantity() - item.getQuantity());
-         findStockItem(item.getId()).setQuantity(findStockItem(item.getId()).getQuantity() - item.getQuantity());
-         }**//**
-        soldItemList.add(item);
-
-    }
-
-    @Override
-    public void saveStockItem(StockItem stockItem) {
-        stockItemList.add(stockItem);
-    }
-
-    @Override
-    public void beginTransaction() {
-
-    }
-
-    @Override
-    public void rollbackTransaction() {
-    }
-
-    @Override
-    public void commitTransaction() {
-    }**/
 }
