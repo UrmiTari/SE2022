@@ -1,16 +1,14 @@
 package ee.ut.math.tvt.salessystem.dao;
 
+import ee.ut.math.tvt.salessystem.dataobjects.SoldItem;
+import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
-//import ee.ut.math.tvt.salessystem.dataobjects.SoldItem;
-//import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class HibernateSalesSystemDao implements SalesSystemDAO {
+public class HibernateSalesSystemDAO implements SalesSystemDAO {
 
     //private final List<StockItem> stockItemList;
     //private final List<SoldItem> soldItemList;
@@ -18,7 +16,7 @@ public class HibernateSalesSystemDao implements SalesSystemDAO {
     private final EntityManagerFactory emf;
     private final EntityManager em;
 
-    /**public HibernateSalesSystemDao() {
+    /**public HibernateSalesSystemDAO() {
         List<StockItem> items = new ArrayList<StockItem>();
         items.add(new StockItem(1L, "Lays chips", "Potato chips", 11.0, 5));
         items.add(new StockItem(2L, "Chupa-chups", "Sweets", 8.0, 8));
@@ -28,21 +26,40 @@ public class HibernateSalesSystemDao implements SalesSystemDAO {
         this.stockItemList = items;
         this.soldItemList = new ArrayList<>();
     }**/
-    public HibernateSalesSystemDAO () {
+    public HibernateSalesSystemDAO() {
 // if you get ConnectException / JDBCConnectionException then you
 // probably forgot to start the database before starting the application
         emf = Persistence.createEntityManagerFactory ("pos");
         em = emf.createEntityManager ();
     }
 
-    public HibernateSalesSystemDao() {
-    }
 
     // TODO implement missing methods
     public void close () {
         em.close ();
         emf.close ();
     }
+
+    @Override
+    public List<StockItem> findStockItems() {
+        return null;
+    }
+
+    @Override
+    public StockItem findStockItem(long id) {
+        return null;
+    }
+
+    @Override
+    public void saveStockItem(StockItem stockItem) {
+
+    }
+
+    @Override
+    public void saveSoldItem(SoldItem item) {
+
+    }
+
     @Override
     public void beginTransaction () {
         em.getTransaction (). begin ();

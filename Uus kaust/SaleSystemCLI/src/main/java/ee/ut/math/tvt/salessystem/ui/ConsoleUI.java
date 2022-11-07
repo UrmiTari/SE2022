@@ -1,7 +1,7 @@
 package ee.ut.math.tvt.salessystem.ui;
 
 import ee.ut.math.tvt.salessystem.SalesSystemException;
-import ee.ut.math.tvt.salessystem.dao.HibernateSalesSystemDao;
+import ee.ut.math.tvt.salessystem.dao.HibernateSalesSystemDAO;
 import ee.ut.math.tvt.salessystem.dao.SalesSystemDAO;
 import ee.ut.math.tvt.salessystem.dataobjects.SoldItem;
 import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
@@ -30,7 +30,7 @@ public class ConsoleUI {
     }
 
     public static void main(String[] args) throws Exception {
-        SalesSystemDAO dao = new HibernateSalesSystemDao();
+        SalesSystemDAO dao = new HibernateSalesSystemDAO();
         ConsoleUI console = new ConsoleUI(dao);
         console.run();
     }

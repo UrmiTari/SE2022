@@ -11,15 +11,21 @@ import javax.persistence.*;
 )
 public class SoldItem {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="ID")
     private Long id;
 
-
+    @OneToOne
+    @PrimaryKeyJoinColumn
     private StockItem stockItem;
+
+    @Column(name = "NAME")
     private String name;
+
+    @Column( name = "QUANTITY")
     private Integer quantity;
+
+    @Column(name = "PRICE")
     private double price;
 
     public SoldItem() {
