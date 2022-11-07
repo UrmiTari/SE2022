@@ -1,14 +1,29 @@
 package ee.ut.math.tvt.salessystem.dataobjects;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Stock item.
  */
 public class StockItem {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="ID")
     private Long id;
+
+    @Column(name = "NAME")
     private String name;
+
+    @Column(name = "PRICE")
     private double price;
+
+    @Column(name = "DESCRIPTION")
     private String description;
+
+    @Column(name = "QUANTITY")
     private int quantity;
 
     public StockItem() {
