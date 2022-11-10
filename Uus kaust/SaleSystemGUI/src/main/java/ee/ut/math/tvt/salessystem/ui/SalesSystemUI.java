@@ -2,10 +2,10 @@ package ee.ut.math.tvt.salessystem.ui;
 
 import ee.ut.math.tvt.salessystem.dao.HibernateSalesSystemDAO;
 import ee.ut.math.tvt.salessystem.dao.SalesSystemDAO;
+import ee.ut.math.tvt.salessystem.logic.ShoppingCart;
 import ee.ut.math.tvt.salessystem.ui.controllers.HistoryController;
 import ee.ut.math.tvt.salessystem.ui.controllers.PurchaseController;
 import ee.ut.math.tvt.salessystem.ui.controllers.StockController;
-import ee.ut.math.tvt.salessystem.logic.ShoppingCart;
 import ee.ut.math.tvt.salessystem.ui.controllers.TeamController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +18,6 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,7 +27,7 @@ import java.net.URL;
  */
 public class SalesSystemUI extends Application {
 
-    private static final Logger log = LogManager.getLogger(SalesSystemUI.class);
+    //private static final Logger log = LogManager.getLogger(SalesSystemUI.class);
 
     private final SalesSystemDAO dao;
     private final ShoppingCart shoppingCart;
@@ -41,10 +39,10 @@ public class SalesSystemUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        log.info("javafx version: " + System.getProperty("javafx.runtime.version"));
+        /**log.info("javafx version: " + System.getProperty("javafx.runtime.version"));
         log.debug("Hello this is a debug message");
         log.info("Hello this is an info message");
-        log.error("ping bong error");
+        log.error("ping bong error");**/
 
         Tab purchaseTab = new Tab();
         purchaseTab.setText("Point-of-sale");
@@ -80,7 +78,7 @@ public class SalesSystemUI extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        log.info("Salesystem GUI started");
+        //log.info("Salesystem GUI started");
     }
 
     private Node loadControls(String fxml, Initializable controller) throws IOException {

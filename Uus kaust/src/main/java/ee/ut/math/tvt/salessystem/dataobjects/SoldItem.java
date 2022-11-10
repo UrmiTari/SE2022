@@ -12,11 +12,10 @@ import javax.persistence.*;
 public class SoldItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="ID")
     private Long id;
 
-    @OneToOne
-    @PrimaryKeyJoinColumn
+    @ManyToOne
+    @JoinColumn (name = "STOCKITEM")
     private StockItem stockItem;
 
     @Column(name = "NAME")
