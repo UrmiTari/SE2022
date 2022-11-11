@@ -40,6 +40,7 @@ public class HibernateSalesSystemDAO implements SalesSystemDAO {
 
     @Override
     public StockItem findStockItem(long id) {
+
         //return em.createQuery("",StockItem.class).getSingleResult();
         return null;
     }
@@ -47,12 +48,14 @@ public class HibernateSalesSystemDAO implements SalesSystemDAO {
     @Override
     public void saveStockItem(StockItem stockItem) {
         //em.setProperty(String.valueOf(stockItem), findStockItem(stockItem.getId()));
+        em.persist(stockItem);
         return;
     }
 
     @Override
     public void saveSoldItem(SoldItem item) {
         //em.setProperty(String.valueOf(item), findStockItem(item.getId()));
+        em.setProperty(Integer.toString(Math.toIntExact(item.getId())),item.getQuantity());
         return;
     }
 
