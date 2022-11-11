@@ -6,6 +6,7 @@ import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateSalesSystemDAO implements SalesSystemDAO {
@@ -33,35 +34,38 @@ public class HibernateSalesSystemDAO implements SalesSystemDAO {
     @Override
     public List<StockItem> findStockItems() {
         //return em.createQuery("from Student", Student.class).getResultList();
-        return em.createQuery("", StockItem.class).getResultList();
-        //return null;
+        //return em.createQuery("", StockItem.class).getResultList();
+        return new ArrayList<>();
     }
 
     @Override
     public StockItem findStockItem(long id) {
-        return em.createQuery("",StockItem.class).getSingleResult();
+        //return em.createQuery("",StockItem.class).getSingleResult();
+        return null;
     }
 
     @Override
     public void saveStockItem(StockItem stockItem) {
-        em.setProperty(String.valueOf(stockItem), findStockItem(stockItem.getId()));
+        //em.setProperty(String.valueOf(stockItem), findStockItem(stockItem.getId()));
+        return;
     }
 
     @Override
     public void saveSoldItem(SoldItem item) {
-        em.setProperty(String.valueOf(item), findStockItem(item.getId()));
+        //em.setProperty(String.valueOf(item), findStockItem(item.getId()));
+        return;
     }
 
     @Override
     public void beginTransaction () {
-        em.getTransaction (). begin ();
+        em.getTransaction().begin();
     }
     @Override
     public void rollbackTransaction () {
-        em.getTransaction (). rollback ();
+        em.getTransaction().rollback();
     }
     @Override
-    public void commitTransaction () {
+    public void commitTransaction() {
         em.getTransaction (). commit ();
     }
 
