@@ -40,6 +40,7 @@ public class StockController implements Initializable {
     @FXML
     private Button submitPurchase;
 
+
     public StockController(SalesSystemDAO dao) {
         this.dao = dao;
     }

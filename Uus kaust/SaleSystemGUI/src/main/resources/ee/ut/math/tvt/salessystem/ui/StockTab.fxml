@@ -16,7 +16,7 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.*?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.92">
-  <SplitPane>
+  <SplitPane dividerPositions="0.4" orientation="VERTICAL" prefHeight="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
     <items>
       <AnchorPane prefHeight="200.0" styleClass="background_style" SplitPane.resizableWithParent="false">
         <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="308.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
@@ -71,7 +71,20 @@
         </TitledPane>
       </AnchorPane>
       <AnchorPane>
-        <TitledPane alignment="CENTER" animated="false" collapsible="false" text="Warehouse status" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+        <TitledPane alignment="CENTER" animated="false" styleClass="background_style" collapsible="false" text="Warehouse status"  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+          <content>
+
+              <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="308.0" styleClass="background_style" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                <children>
+                  <Button onMouseClicked="#refreshButtonClicked" text="Refresh warehouse"/>
+                </children>
+              </HBox>
+
+          </content>
+        </TitledPane>
+      </AnchorPane>
+      <AnchorPane>
+        <TitledPane alignment="CENTER" animated="false" collapsible="false" text="Warehouse status"  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
           <content>
             <TableView fx:id="warehouseTableView" styleClass="blue_style" BorderPane.alignment="CENTER">
               <columns>
@@ -99,11 +112,8 @@
               <columnResizePolicy>
                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
               </columnResizePolicy>
-            </TableView>
+          </TableView>
           </content>
-          <Button>
-            <Button onMouseClicked="#refreshButtonClicked" text="Refresh warehouse" BorderPane.alignment="TOP_LEFT" />
-          </Button>
         </TitledPane>
       </AnchorPane>
     </items>
