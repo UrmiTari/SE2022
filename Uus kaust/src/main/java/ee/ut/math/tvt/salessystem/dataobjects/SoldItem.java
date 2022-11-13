@@ -15,7 +15,7 @@ public class SoldItem {
     private Long id;
 
     @ManyToOne
-    @JoinColumn (name = "STOCKITEM")
+    @JoinColumn (name = "STOCKITEM", nullable = false)
     private StockItem stockItem;
 
     @Column(name = "NAME")

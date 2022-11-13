@@ -6,7 +6,6 @@ import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.ArrayList;
 import java.util.List;
 
 public class HibernateSalesSystemDAO implements SalesSystemDAO {
@@ -33,30 +32,30 @@ public class HibernateSalesSystemDAO implements SalesSystemDAO {
 
     @Override
     public List<StockItem> findStockItems() {
-        //return em.createQuery("from Student", Student.class).getResultList();
-        //return em.createQuery("", StockItem.class).getResultList();
-        return new ArrayList<>();
+        return em.createQuery("from StockItem").getResultList();
+        //return new ArrayList<>();
     }
 
     @Override
     public StockItem findStockItem(long id) {
-
+        return em.find(StockItem.class,id);
         //return em.createQuery("",StockItem.class).getSingleResult();
-        return null;
+        //return null;
     }
 
     @Override
     public void saveStockItem(StockItem stockItem) {
-        //em.setProperty(String.valueOf(stockItem), findStockItem(stockItem.getId()));
+        beginTransaction();
         em.persist(stockItem);
-        return;
+        commitTransaction();
     }
 
     @Override
     public void saveSoldItem(SoldItem item) {
-        //em.setProperty(String.valueOf(item), findStockItem(item.getId()));
-        em.setProperty(Integer.toString(Math.toIntExact(item.getId())),item.getQuantity());
-        return;
+        //em.setProperty(Integer.toString(Math.toIntExact(item.getId())),item.getQuantity());
+        beginTransaction();
+        em.persist(item);
+        commitTransaction();
     }
 
     @Override
