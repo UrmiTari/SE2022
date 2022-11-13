@@ -1,8 +1,9 @@
 package ee.ut.math.tvt.salessystem.ui.controllers;
 
-import ee.ut.math.tvt.salessystem.SalesSystemException;
 import ee.ut.math.tvt.salessystem.dao.SalesSystemDAO;
 import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,8 +20,8 @@ public class StockController implements Initializable {
 
     private final SalesSystemDAO dao;
     private static final Logger log = LogManager.getLogger(StockController.class);
-    @FXML
-    private Button addItem;
+    //@FXML
+    //private Button addItem;
     @FXML
     private TableView<StockItem> warehouseTableView;
     @FXML
@@ -32,7 +33,7 @@ public class StockController implements Initializable {
     @FXML
     private TextField priceField;
     @FXML
-    private Button addItemButton;
+    private Button addToWarehouse;
     @FXML
     private Button cancelPurchase;
     @FXML
@@ -48,8 +49,30 @@ public class StockController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //log.info("initialize");
+        //cancelPurchase.setDisable(true);
+        //submitPurchase.setDisable(true);
+        //warehouseTableView.setItems(FXCollections.observableList(.getAll()));
+        disableProductField(true);
+
         refreshStockItems();
         // TODO refresh view after adding new items
+        this.barCodeField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue) {
+                if (!newPropertyValue) {
+                    fillInputsBySelectedStockItem();
+                }
+            }
+        });
+    }
+    private void fillInputsBySelectedStockItem() {
+        StockItem stockItem = getStockItemByBarcode();
+        if (stockItem != null) {
+            nameField.setText(stockItem.getName());
+            priceField.setText(String.valueOf(stockItem.getPrice()));
+        } else {
+            resetProductField();
+        }
     }
 
     @FXML
@@ -62,7 +85,7 @@ public class StockController implements Initializable {
         warehouseTableView.refresh();
     }
     /** Event handler for the <code>new purchase</code> event. */
-    @FXML
+    /**@FXML
     protected void newPurchaseButtonClicked() {
         log.info("New sale process started");
         try {
@@ -70,7 +93,7 @@ public class StockController implements Initializable {
         } catch (SalesSystemException e) {
             log.error(e.getMessage(), e);
         }
-    }
+    }**/
     // switch UI to the state that allows to proceed with the purchase
     private void enableInputs() {
         resetProductField();
@@ -86,16 +109,25 @@ public class StockController implements Initializable {
         priceField.setText("");
     }
     private void disableProductField(boolean disable) {
-        this.addItemButton.setDisable(disable);
+        this.addToWarehouse.setDisable(disable);
         this.barCodeField.setDisable(disable);
         this.quantityField.setDisable(disable);
         this.nameField.setDisable(disable);
         this.priceField.setDisable(disable);
     }
+    private StockItem getStockItemByBarcode() {
+        try {
+            long code = Long.parseLong(barCodeField.getText());
+            return dao.findStockItem(code);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
     @FXML
-    public void addItemEventHandler() {
+    public void addToWarehouseEventHandler() {
+
         // add chosen item to the shopping cart.
-        /**StockItem stockItem = getStockItemByBarcode();
+        StockItem stockItem = getStockItemByBarcode();
         if (stockItem != null) {
             int quantity;
             try {
@@ -104,8 +136,9 @@ public class StockController implements Initializable {
                 quantity = 1;
             }
             //shoppingCart.addItem(new SoldItem(stockItem, quantity));**/
-            //purchaseTableView.refresh();
-        //}
+
+            warehouseTableView.refresh();
+        }
     }
 
 }

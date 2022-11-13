@@ -7,4 +7,15 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.92">
+    <SplitPane dividerPositions="0.4" orientation="VERTICAL" prefHeight="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane prefHeight="200.0" styleClass="background_style" SplitPane.resizableWithParent="false">
+                <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="308.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                    <TextField text="Team name"/>
+
+
+                </HBox>
+            </AnchorPane>
+        </items>
+    </SplitPane>
 </AnchorPane>
