@@ -51,7 +51,7 @@ public class StockController implements Initializable {
         //log.info("initialize");
         //cancelPurchase.setDisable(true);
         //submitPurchase.setDisable(true);
-        //warehouseTableView.setItems(FXCollections.observableList(.getAll()));
+        warehouseTableView.setItems(FXCollections.observableList(dao.findStockItems()));
         disableProductField(true);
 
         refreshStockItems();
@@ -136,7 +136,7 @@ public class StockController implements Initializable {
                 quantity = 1;
             }
             //shoppingCart.addItem(new SoldItem(stockItem, quantity));**/
-
+            dao.saveStockItem(stockItem);
             warehouseTableView.refresh();
         }
     }
