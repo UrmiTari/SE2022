@@ -7,4 +7,17 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.92">
+    <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane prefHeight="200.0" prefWidth="2000" styleClass="background_style" SplitPane.resizableWithParent="true">
+                <TextField text="TEAM NAME: LG4-3TILLI  team members" styleClass="background_style" style="-fx-background-color: TRANSPARENT" editable="false" prefWidth="2000"/>
+                <TextField text="TEAM NAME: LG4-3TILLI  team members" styleClass="background_style" style="-fx-background-color: TRANSPARENT" editable="false" prefWidth="2000"/>
+            </AnchorPane>
+            <AnchorPane>
+                <TitledPane alignment="TOP_LEFT" animated="false" styleClass="background_style" collapsible="false" text="Team Picture"  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+                    <TextField text="siia pilt"/>
+                </TitledPane>
+            </AnchorPane>
+        </items>
+    </SplitPane>
 </AnchorPane>
