@@ -26,7 +26,7 @@ public class StockItem {
     @Column(name = "QUANTITY")
     private int quantity;
 
-    public StockItem() {
+    public StockItem(long id, String name2, String s, double price2, int quantity2, String loc) {
     }
 
     public StockItem(Long id, String name, String desc, double price, int quantity) {

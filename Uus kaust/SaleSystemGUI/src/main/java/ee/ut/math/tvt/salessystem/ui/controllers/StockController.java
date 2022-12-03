@@ -123,7 +123,7 @@ public class StockController implements Initializable {
             createNotification("Amount should be a number!");
             return;
         }
-        //Check if the item that is adde to the warehouse is already there
+        //Check if the item that is added to the warehouse is already there
         if (searchedItem != null)
             searchedItem.setQuantity(searchedItem.getQuantity() + Integer.parseInt(quantityField.getText()));
         else {
@@ -153,6 +153,7 @@ public class StockController implements Initializable {
             createNotification("Select a table row to delete it.");
         }
     }
+
     /** Event handler for the <code>new purchase</code> event. */
     /**@FXML
     protected void newPurchaseButtonClicked() {
