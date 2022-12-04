@@ -127,7 +127,7 @@ public class StockController implements Initializable {
         if (searchedItem != null)
             searchedItem.setQuantity(searchedItem.getQuantity() + Integer.parseInt(quantityField.getText()));
         else {
-            StockItem newItem = new StockItem(id, name2, "", price2, quantity2,loc);
+            StockItem newItem = new StockItem(id, name2, "", price2, quantity2);
             dao.saveStockItem(newItem);
         }
         barCodeField.clear();
