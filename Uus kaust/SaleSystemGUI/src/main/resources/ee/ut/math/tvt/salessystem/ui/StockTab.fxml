@@ -77,6 +77,8 @@
               <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="308.0" styleClass="background_style" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
                 <children>
                   <Button onMouseClicked="#refreshButtonClicked" text="Refresh warehouse"/>
+
+                  <Button onMouseClicked="#deleteButtonClicked" text="Delete item"/>
                 </children>
               </HBox>
 
