@@ -16,10 +16,16 @@ public class Tests {
     private SalesSystemDAO dao;
     private ShoppingCart shoppingCart;
     private StockItem bread;
+    private StockItem tea;
+    private StockItem coco;
+    private StockItem buns;
 
     @Before
     public void setUp() {
-        bread = new StockItem(5L,"Bread","Fresh and fluffy", 0.59,10);
+        bread = new StockItem(1L,"Bread","Fresh and fluffy", 0.59,10);
+        tea = new StockItem(2L, "Tea", "black tea", 0.5, 10);
+        coco = new StockItem(3L, "coco", "warm", 1.5, 10);
+        buns = new StockItem(4L, "buns", "golden", 0.25, 10);
         dao = new InMemorySalesSystemDAO();
     }
 
@@ -66,37 +72,63 @@ public class Tests {
     public void testAddingItemWithNegativeQuantity () {
         //check that adding an item with
         //negative quantity results in an exception
-        StockItem tea = new StockItem(10L, "Tea", "black tea", 0.5, -10)
+        StockItem tea = new StockItem(10L, "Tea", "black tea", 0.5, -10);
     }
 
-    @Test
+    @Test(expected = NumberFormatException.class)
     public void testAddingItemWithQuantityTooLarge () {
-
+        SoldItem bread2 = new SoldItem(bread, 1000);
+        ShoppingCart shoppingCart = new ShoppingCart(dao);
+        shoppingCart.addItem(bread2);
     }
 
-    @Test
+    @Test(expected = NumberFormatException.class)
     public void testAddingItemWithQuantitySumTooLarge () {
-
+        ShoppingCart shoppingCart = new ShoppingCart(dao);
+        SoldItem bread2 = new SoldItem(bread, 2);
+        shoppingCart.addItem(bread2);
+        SoldItem bread3 = new SoldItem(bread, 3);
+        shoppingCart.addItem(bread3);
     }
     @Test
     public void testSubmittingCurrentPurchaseDecreasesStockItemQuantity () {
+        ShoppingCart shoppingCart = new ShoppingCart(dao);
 
     }
     @Test
     public void testSubmittingCurrentPurchaseBeginsAndCommitsTransaction () {
-
+        InMemorySalesSystemDAO daoMock = Mockito.spy(new InMemorySalesSystemDAO());
+        InOrder inOrder = inOrder(daoMock);
+        ShoppingCart shoppingCart = new ShoppingCart(daoMock);
+        shoppingCart.submitCurrentPurchase();
+        inOrder.verify(daoMock,times(1)).beginTransaction();
+        inOrder.verify(daoMock,times(1)).commitTransaction();
     }
     @Test
     public void testSubmittingCurrentOrderCreatesHistoryItem () {
-
+        InMemorySalesSystemDAO daoMock = Mockito.spy(new InMemorySalesSystemDAO());
+        ShoppingCart shoppingCart = new ShoppingCart(daoMock);
     }
     @Test
     public void testSubmittingCurrentOrderSavesCorrectTime () {
-
+        ShoppingCart shoppingCart = new ShoppingCart(dao);
+        SoldItem bread2 = new SoldItem(bread, 1);
+        shoppingCart.addItem(bread2);
     }
     @Test
     public void testCancellingOrder () {
+        ShoppingCart shoppingCart = new ShoppingCart(dao);
+        SoldItem bread2 = new SoldItem(bread, 2);
+        SoldItem tea2 = new SoldItem(tea, 3);
+        shoppingCart.addItem(bread2);
+        shoppingCart.addItem(tea2);
+        shoppingCart.cancelCurrentPurchase();
+        SoldItem coco2 = new SoldItem(coco, 1);
+        SoldItem buns2 = new SoldItem(buns, 4);
+        shoppingCart.addItem(coco2);
+        shoppingCart.addItem(buns2);
 
+        shoppingCart.submitCurrentPurchase();
     }
     @Test
     public void testCancellingOrderQuanititesUnchanged () {
