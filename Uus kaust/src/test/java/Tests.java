@@ -54,7 +54,6 @@ public class Tests {
     public void testAddingExistingItem () {
         //check that adding a new item increases the quantity
         //and the saveStockItem method of the DAO is not called
-
         //verify(, calls(0)).saveStockItem();
         bread = new StockItem(5L,"Bread","Fresh and fluffy", 0.59,10);
         //dao = new InMemorySalesSystemDAO();
@@ -66,7 +65,7 @@ public class Tests {
     public void testAddingItemWithNegativeQuantity () {
         //check that adding an item with
         //negative quantity results in an exception
-        StockItem tea = new StockItem(10L, "Tea", "black tea", 0.5, -10)
+        StockItem tea = new StockItem(10L, "Tea", "black tea", 0.5, -10);
     }
 
     @Test
