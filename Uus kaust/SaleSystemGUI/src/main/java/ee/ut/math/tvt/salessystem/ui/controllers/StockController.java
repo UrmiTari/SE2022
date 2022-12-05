@@ -1,5 +1,6 @@
 package ee.ut.math.tvt.salessystem.ui.controllers;
 
+import ee.ut.math.tvt.salessystem.SalesSystemException;
 import ee.ut.math.tvt.salessystem.dao.SalesSystemDAO;
 import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
 import javafx.beans.value.ChangeListener;
@@ -95,6 +96,12 @@ public class StockController implements Initializable {
 
     public void addProductButtonClicked(){
         long id = 0;
+
+        try {
+            enableInputs();
+        } catch (SalesSystemException e) {
+            log.error(e.getMessage(), e);
+        }
 
         try{
             id = Long.parseLong(barCodeField.getText());
