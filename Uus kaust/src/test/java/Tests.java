@@ -13,6 +13,7 @@ import org.mockito.Mockito;
 
 public class Tests {
     //List mockedList = mock(List.class);
+    private InMemorySalesSystemDAO dao;
     private SalesSystemDAO dao;
     private ShoppingCart shoppingCart;
     private StockItem bread;
