@@ -1,8 +1,13 @@
 package ee.ut.math.tvt.salessystem.dao;
 
+import ee.ut.math.tvt.salessystem.dataobjects.SoldItem;
+import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
+import java.util.ArrayList;
+import java.util.List;
+
 public class InMemorySalesSystemDAO {
 
-    /**private final List<StockItem> stockItemList;
+    private final List<StockItem> stockItemList;
     private final List<SoldItem> soldItemList;
 
     public InMemorySalesSystemDAO() {
@@ -16,12 +21,12 @@ public class InMemorySalesSystemDAO {
         this.soldItemList = new ArrayList<>();
     }
 
-    @Override
+    //@Override
     public List<StockItem> findStockItems() {
         return stockItemList;
     }
 
-    @Override
+    //@Override
     public StockItem findStockItem(long id) {
         for (StockItem item : stockItemList) {
             if (item.getId() == id)
@@ -30,32 +35,32 @@ public class InMemorySalesSystemDAO {
         return null;
     }
 
-    @Override
+   // @Override
     public void saveSoldItem(SoldItem item) {
-        /**if (findStockItem(item.getId()).getQuantity() - item.getQuantity() >= 0){
+        if (findStockItem(item.getId()).getQuantity() - item.getQuantity() >= 0){
             soldItemList.add(item);
             //item.setQuantity(findStockItem(item.getId()).getQuantity() - item.getQuantity());
             findStockItem(item.getId()).setQuantity(findStockItem(item.getId()).getQuantity() - item.getQuantity());
-        }**//**
+        }
         soldItemList.add(item);
 
     }
 
-    @Override
+    //@Override
     public void saveStockItem(StockItem stockItem) {
         stockItemList.add(stockItem);
     }
 
-    @Override
+    //@Override
     public void beginTransaction() {
 
     }
 
-    @Override
+    //@Override
     public void rollbackTransaction() {
     }
 
-    @Override
+    //@Override
     public void commitTransaction() {
-    }**/
+    }
 }
