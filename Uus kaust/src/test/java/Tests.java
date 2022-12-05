@@ -38,7 +38,7 @@ public class Tests {
         //verify(, times(1)).commitTransaction();
         InMemorySalesSystemDAO daoMock = Mockito.spy(new InMemorySalesSystemDAO());
         InOrder inOrder = inOrder(daoMock);
-        daoMock.saveStockItem(item1);
+        daoMock.saveStockItem(bread);
         //shoppingCart = new ShoppingCart(dao);
         //dao = Mockito.mock(InMemorySalesSystemDAO.class);
         inOrder.verify(daoMock,times(1)).beginTransaction();
