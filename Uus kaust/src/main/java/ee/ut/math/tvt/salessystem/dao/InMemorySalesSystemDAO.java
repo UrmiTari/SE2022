@@ -5,7 +5,7 @@ import ee.ut.math.tvt.salessystem.dataobjects.StockItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InMemorySalesSystemDAO {
+public class InMemorySalesSystemDAO implements SalesSystemDAO{
 
     private final List<StockItem> stockItemList;
     private final List<SoldItem> soldItemList;

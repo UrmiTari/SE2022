@@ -8,12 +8,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.List;
 
-public class HibernateSalesSystemDAO implements SalesSystemDAO {
+public class HibernateSalesSystemDAO{
 
     //private final List<StockItem> stockItemList;
     //private final List<SoldItem> soldItemList;
 
-    private final EntityManagerFactory emf;
+    /**private final EntityManagerFactory emf;
     private final EntityManager em;
 
     public HibernateSalesSystemDAO() {
@@ -69,6 +69,6 @@ public class HibernateSalesSystemDAO implements SalesSystemDAO {
     @Override
     public void commitTransaction() {
         em.getTransaction (). commit ();
-    }
+    }**/
 
 }
