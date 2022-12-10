@@ -90,6 +90,10 @@ public class SalesSystemUI extends Application {
         fxmlLoader.setController(controller);
         return fxmlLoader.load();
     }
+
+    public void main(String[] args) {
+        launch(args);
+    }
 }
 
 
